@@ -163,8 +163,9 @@ main {
   justify-content: center;
   gap: 0.2rem;
   padding: 0.35rem 0.5rem;
-  background: transparent;          /* remove fundo de card */
-  border: none;                     /* remove borda */
+  background: none !important;      /* garante que não vire "card" */
+  border: none !important;
+  box-shadow: none !important;
   border-radius: 8px;
   color: var(--tinta-suave);        /* legenda discreta */
   text-decoration: none;
