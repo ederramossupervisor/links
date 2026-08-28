@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hub de Links — SRE Afonso Cláudio</title>
+  <meta name="description" content="Hub de links por setor para os servidores da SRE Afonso Cláudio." />
+  <meta name="theme-color" content="#1B4F9C" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icons/favicon-32.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Hub SRE-AC" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="fita-topo" aria-hidden="true"></div>
+
+  <header class="cabecalho">
+    <img src="icons/logo-sre.png" alt="SRE Afonso Cláudio" class="cabecalho__logo" />
+    <h1 class="cabecalho__subtitulo">Links úteis</h1>
+  </header>
+
+  <div class="busca-wrap">
+    <div class="busca-caixa">
+      <i class="bi bi-search"></i>
+      <input
+        type="search"
+        id="busca-input"
+        class="busca-input"
+        placeholder="Buscar setor ou link..."
+        aria-label="Buscar setor ou link"
+      />
+    </div>
+  </div>
+
+  <main>
+    <section class="acesso-rapido" aria-label="Links de acesso rápido">
+      <h2 class="acesso-rapido__titulo">Acesso rápido</h2>
+      <div id="links-comuns" class="links-comuns">
+        <!-- botões inseridos via JavaScript (js/app.js) -->
+      </div>
+    </section>
+
+    <div id="grade-setores" class="grade-setores" aria-live="polite">
+      <!-- cartões de setor inseridos via JavaScript (js/app.js) -->
+    </div>
+  </main>
+
+  <footer>
+    <strong>SRE Afonso Cláudio</strong>
+    <br />
+    <small>Hub de Links — dados de exemplo, em atualização</small>
+  </footer>
+
+  <!-- modal com os links de um setor -->
+  <div class="modal fade" id="modalSetor" tabindex="-1" aria-labelledby="modalSetorTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="modalSetorTitulo"></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="modalSetorCorpo"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- aviso para links ainda fictícios -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toastExemplo" class="toast toast-exemplo" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header">
+        <i class="bi bi-info-circle-fill me-2" style="color: var(--azul)"></i>
+        <strong class="me-auto">Link de exemplo</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
+      </div>
+      <div class="toast-body">
+        Este link ainda é fictício. Substitua pela URL real em <code>data/links.json</code> (ou na planilha, quando
+        estiver publicada).
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    Dados.carregar()
+      .then(function (dados) {
+        App.init(dados);
+      })
+      .catch(function (erro) {
+        console.error(erro);
+        document.getElementById('grade-setores').innerHTML =
+          '<p class="sem-resultados">Não foi possível carregar os links agora. Tente novamente em instantes.</p>';
+      });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js').catch(function (erro) {
+          console.warn('Falha ao registrar o service worker:', erro);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

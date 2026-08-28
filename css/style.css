@@ -1,0 +1,444 @@
+/* ==========================================================================
+   Hub de Links — SRE Afonso Cláudio
+   Identidade visual baseada nas cores da bandeira do Espírito Santo:
+   azul (harmonia), branco (paz) e rosa (alegria) — lema "Trabalha e Confia".
+   ========================================================================== */
+
+:root {
+  /* cores — bandeira do ES */
+  --azul: #1B4F9C;
+  --azul-escuro: #123A75;
+  --azul-claro: #5B9BE0;
+  --rosa: #E8749A;
+  --rosa-suave: #F7A8C4;
+  --branco: #FFFFFF;
+  --neve: #F5F8FC;
+  --tinta: #16233D;
+  --tinta-suave: #5B6B85;
+  --linha: #E3E8F0;
+
+  /* tipografia */
+  --fonte-titulo: "Fraunces", "Georgia", serif;
+  --fonte-texto: "Manrope", "Segoe UI", sans-serif;
+
+  /* fita tricolor — elemento assinatura */
+  --fita: linear-gradient(to right, var(--azul) 0%, var(--azul) 33.33%, var(--branco) 33.33%, var(--branco) 66.66%, var(--rosa) 66.66%, var(--rosa) 100%);
+
+  --raio: 18px;
+  --sombra: 0 10px 30px -12px rgba(22, 35, 61, 0.25);
+  --transicao: 200ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--neve);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* estado de foco visível (acessibilidade / navegação por teclado) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--rosa);
+  outline-offset: 2px;
+}
+
+/* ---------- fita tricolor (assinatura visual, topo da página) ---------- */
+.fita-topo {
+  height: 7px;
+  width: 100%;
+  background: var(--fita);
+}
+
+/* ---------------------------- cabeçalho ---------------------------- */
+.cabecalho {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.cabecalho__logo {
+  display: block;
+  max-height: 80px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.cabecalho__subtitulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--azul);
+  margin: 0.9rem 0 0;
+}
+
+/* ------------------------------ busca ------------------------------ */
+.busca-wrap {
+  max-width: 480px;
+  margin: 1.75rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.busca-caixa {
+  position: relative;
+}
+
+.busca-caixa i {
+  position: absolute;
+  left: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--azul-claro);
+  pointer-events: none;
+}
+
+.busca-input {
+  width: 100%;
+  padding: 0.85rem 1.25rem 0.85rem 2.6rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--linha);
+  background: var(--branco);
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  color: var(--tinta);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.busca-input:focus {
+  outline: none;
+  border-color: var(--azul-claro);
+  box-shadow: 0 0 0 4px rgba(91, 155, 224, 0.18);
+}
+
+/* --------------------------- grade de setores --------------------------- */
+main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ------------------------------ acesso rápido ------------------------------ */
+.acesso-rapido {
+  margin-bottom: 2.25rem;
+}
+
+.acesso-rapido__titulo {
+  font-family: var(--fonte-texto);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin: 0 0 0.85rem;
+}
+
+.links-comuns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  max-width: 420px;
+}
+
+.link-comum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.3rem;
+  background: var(--branco);
+  border: 1.5px solid var(--linha);
+  border-radius: 14px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 0.62rem;
+  line-height: 1.15;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transicao), background var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+.link-comum i {
+  font-size: 1.15rem;
+  color: var(--rosa);
+}
+
+.link-comum:hover,
+.link-comum:focus-visible {
+  border-color: var(--azul-claro);
+  background: var(--neve);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+
+.link-comum.pendente {
+  border-style: dashed;
+  color: var(--tinta-suave);
+}
+
+.link-comum.pendente i {
+  color: var(--tinta-suave);
+}
+
+.grade-setores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.15rem;
+}
+
+.setor-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.75rem 1.15rem 1.5rem;
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+
+.setor-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--fita);
+  transform: scaleX(0);
+  transition: transform var(--transicao);
+}
+
+.setor-card:hover,
+.setor-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+  border-color: transparent;
+}
+
+.setor-card:hover::after,
+.setor-card:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.setor-card__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(27, 79, 156, 0.09);
+  color: var(--azul);
+  font-size: 1.5rem;
+}
+
+.setor-card__nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--tinta);
+  line-height: 1.3;
+}
+
+.setor-card__contagem {
+  font-size: 0.78rem;
+  color: var(--tinta-suave);
+}
+
+.sem-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--tinta-suave);
+  padding: 2.5rem 1rem;
+  font-size: 0.98rem;
+}
+
+/* -------------------------------- modal -------------------------------- */
+.modal-content {
+  border-radius: var(--raio);
+  border: none;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: var(--azul);
+  color: var(--branco);
+  border-bottom: none;
+  padding: 1.4rem 1.6rem;
+}
+
+.modal-header .setor-card__icone {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--branco);
+  width: 46px;
+  height: 46px;
+  font-size: 1.15rem;
+}
+
+.modal-title {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+.modal-body {
+  padding: 1.5rem 1.6rem 1.75rem;
+}
+
+/* abas de subsetor (ex.: Escolas Estaduais / Municipais) */
+.subsetor-abas {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.subsetor-aba {
+  border: 1.5px solid var(--linha);
+  background: var(--branco);
+  color: var(--tinta-suave);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transicao), color var(--transicao), border-color var(--transicao);
+}
+
+.subsetor-aba.ativa {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: var(--branco);
+}
+
+.lista-links {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--neve);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transicao), border-color var(--transicao);
+}
+
+.link-item:hover,
+.link-item:focus-visible {
+  background: var(--branco);
+  border-color: var(--azul-claro);
+  color: var(--tinta);
+}
+
+.link-item i.bi-box-arrow-up-right {
+  margin-left: auto;
+  color: var(--azul-claro);
+  font-size: 0.9rem;
+}
+
+.link-item__icone {
+  color: var(--rosa);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+/* ------------------------------- rodapé ------------------------------- */
+footer {
+  text-align: center;
+  padding: 1.75rem 1.5rem 2.25rem;
+  border-top: 1px solid var(--linha);
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+footer strong {
+  color: var(--azul);
+}
+
+/* --------------------------- aviso de exemplo --------------------------- */
+.toast-exemplo .toast-body {
+  font-family: var(--fonte-texto);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------ acessibilidade ------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ------------------------------ responsividade ------------------------------ */
+@media (max-width: 480px) {
+  .cabecalho {
+    padding: 2.25rem 1.25rem 1.5rem;
+  }
+  .cabecalho__logo {
+    max-height: 60px;
+  }
+  .links-comuns {
+    max-width: 100%;
+    gap: 0.4rem;
+  }
+  .link-comum {
+    font-size: 0.56rem;
+    padding: 0.55rem 0.2rem;
+  }
+  .link-comum i {
+    font-size: 1rem;
+  }
+  .grade-setores {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.85rem;
+  }
+  .setor-card {
+    padding: 1.35rem 0.85rem 1.1rem;
+  }
+}

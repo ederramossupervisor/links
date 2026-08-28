@@ -1,0 +1,25 @@
+{
+  "name": "SRE Afonso Cláudio — Hub de Links",
+  "short_name": "Hub SRE-AC",
+  "description": "Hub de links por setor para os servidores da SRE Afonso Cláudio.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#F5F8FC",
+  "theme_color": "#1B4F9C",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

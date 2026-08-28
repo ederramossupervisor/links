@@ -1,0 +1,162 @@
+{
+  "atualizadoEm": "2026-08-27",
+  "aviso": "Links de exemplo — substituir pelos links reais da SRE assim que o levantamento estiver pronto.",
+  "linksComuns": [
+    { "nome": "Agenda", "url": "https://docs.google.com/spreadsheets/d/19qp1JvmUod_iasnI0GwFronxrcYWHp9oVg8T_PXoS48/edit#gid=1286460503", "icone": "bi-calendar-event-fill" },
+    { "nome": "Portal do Servidor", "url": "https://eservidor.es.gov.br/", "icone": "bi-person-workspace" },
+    { "nome": "Edocs", "url": "https://e-docs.es.gov.br/", "icone": "bi-file-earmark-text-fill" },
+    { "nome": "A definir", "url": "#", "icone": "bi-three-dots" },
+    { "nome": "A definir", "url": "#", "icone": "bi-three-dots" }
+  ],
+  "setores": [
+    {
+      "id": "supervisao-escolar",
+      "nome": "Supervisão Escolar",
+      "icone": "bi-mortarboard-fill",
+      "subsetores": [
+        {
+          "id": "estaduais",
+          "nome": "Escolas Estaduais",
+          "links": [
+            { "nome": "Seges", "url": "https://seges.sedu.es.gov.br/users/sign_in" },
+            { "nome": "Sigae", "url": "https://login.institutounibanco.org.br/realms/sigae/protocol/openid-connect/auth?client_id=sigae-front-spa&redirect_uri=https%3A%2F%2Fpiloto.sigae.org.br%2Fpagina-erro&state=a6b9c1a1-b54b-43a7-81af-5d2956055543&response_mode=fragment&response_type=code&scope=openid&nonce=23a76ab5-cdd6-4bbd-a4a1-1f4949357767&code_challenge=6dbbKMUTK9D1rh0H3If0FgXRTs-BSchhZ4JVffHguDk&code_challenge_method=S256" },
+            { "nome": "Livros de Ponto (Processos)", "url": "https://docs.google.com/spreadsheets/d/193L9auqyv9nI9b50y0B55ZN8lFpxfEZHob8Wizq1En0/edit?gid=1139946150#gid=1139946150" },
+            { "nome": "Edocs", "url": "https://e-docs.es.gov.br/" },
+            { "nome": "Portal do Servidor", "url": "https://eservidor.es.gov.br/" },
+            { "nome": "Indicadores", "url": "https://indicadores.sedu.es.gov.br/" },
+            { "nome": "BI Avaliações Externas", "url": "https://sites.google.com/edu.es.gov.br/painel-gea" },
+            { "nome": "BI Relatórios Estatísticos", "url": "https://sites.google.com/edu.es.gov.br/seges-relatoriosvisuais" }
+          ]
+        },
+        {
+          "id": "municipais",
+          "nome": "Escolas Municipais",
+          "links": [
+            { "nome": "Portal de Apoio às Escolas Municipais", "url": "#" },
+            { "nome": "Relatórios de Supervisão — Municipais", "url": "#" },
+            { "nome": "Calendário Letivo Municipal", "url": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "programas-projetos",
+      "nome": "Programas e Projetos",
+      "icone": "bi-lightbulb-fill",
+      "links": [
+        { "nome": "Portal de Programas Educacionais", "url": "#" },
+        { "nome": "Cadastro de Projetos Pedagógicos", "url": "#" },
+        { "nome": "Editais e Chamadas Vigentes", "url": "#" }
+      ]
+    },
+    {
+      "id": "gestao-escolar",
+      "nome": "Gestão Escolar",
+      "icone": "bi-clipboard-check-fill",
+      "links": [
+        { "nome": "Sistema de Gestão Escolar", "url": "#" },
+        { "nome": "Manual de Rotinas Administrativas", "url": "#" },
+        { "nome": "Painel do Diretor Escolar", "url": "#" }
+      ]
+    },
+    {
+      "id": "prestacao-contas",
+      "nome": "Prestação de Contas",
+      "icone": "bi-calculator-fill",
+      "links": [
+        { "nome": "Sistema de Prestação de Contas", "url": "#" },
+        { "nome": "Modelos de Planilhas Financeiras", "url": "#" },
+        { "nome": "Prazos e Calendário de Envio", "url": "#" }
+      ]
+    },
+    {
+      "id": "protocolo",
+      "nome": "Protocolo",
+      "icone": "bi-inbox-fill",
+      "links": [
+        { "nome": "Protocolo Eletrônico de Documentos", "url": "#" },
+        { "nome": "Consulta de Processos", "url": "#" },
+        { "nome": "Modelos de Ofícios e Memorandos", "url": "#" }
+      ]
+    },
+    {
+      "id": "transporte-escolar",
+      "nome": "Transporte Escolar",
+      "icone": "bi-bus-front-fill",
+      "links": [
+        { "nome": "Cadastro de Rotas e Veículos", "url": "#" },
+        { "nome": "Solicitação de Transporte", "url": "#" },
+        { "nome": "Mapa das Linhas Escolares", "url": "#" }
+      ]
+    },
+    {
+      "id": "busca-ativa-escolar",
+      "nome": "Busca Ativa Escolar",
+      "icone": "bi-signpost-split-fill",
+      "links": [
+        { "nome": "Sistema de Busca Ativa", "url": "#" },
+        { "nome": "Cadastro de Estudantes Fora da Escola", "url": "#" },
+        { "nome": "Guia de Fluxo de Atendimento", "url": "#" }
+      ]
+    },
+    {
+      "id": "nutricao-merenda",
+      "nome": "Nutrição e Merenda Escolar",
+      "icone": "bi-basket2-fill",
+      "links": [
+        { "nome": "Cardápios Semanais", "url": "#" },
+        { "nome": "Controle de Estoque da Merenda", "url": "#" },
+        { "nome": "Solicitação de Gêneros Alimentícios", "url": "#" }
+      ]
+    },
+    {
+      "id": "apoie",
+      "nome": "Apoie (Psicólogas e Assistentes Sociais)",
+      "icone": "bi-heart-pulse-fill",
+      "links": [
+        { "nome": "Encaminhamentos e Atendimentos", "url": "#" },
+        { "nome": "Materiais de Apoio Socioemocional", "url": "#" },
+        { "nome": "Agenda de Visitas Escolares", "url": "#" }
+      ]
+    },
+    {
+      "id": "neapie",
+      "nome": "Neapie (Educação Especial)",
+      "icone": "bi-universal-access",
+      "links": [
+        { "nome": "Cadastro de Estudantes AEE", "url": "#" },
+        { "nome": "Plano Educacional Individualizado — Modelo", "url": "#" },
+        { "nome": "Materiais Acessíveis e Recursos", "url": "#" }
+      ]
+    },
+    {
+      "id": "rh",
+      "nome": "RH (Recursos Humanos)",
+      "icone": "bi-person-badge-fill",
+      "links": [
+        { "nome": "Contracheque Online", "url": "#" },
+        { "nome": "Solicitação de Férias e Licenças", "url": "#" },
+        { "nome": "Portal do Servidor", "url": "#" }
+      ]
+    },
+    {
+      "id": "escolas-extintas",
+      "nome": "Escolas Extintas",
+      "icone": "bi-archive-fill",
+      "links": [
+        { "nome": "Consulta ao Arquivo Escolar", "url": "#" },
+        { "nome": "Solicitação de Histórico e Documentos", "url": "#" }
+      ]
+    },
+    {
+      "id": "ti",
+      "nome": "TI (Tecnologia da Informação)",
+      "icone": "bi-laptop-fill",
+      "links": [
+        { "nome": "Central de Chamados de TI", "url": "#" },
+        { "nome": "Solicitação de Acesso a Sistemas", "url": "#" },
+        { "nome": "Manuais e Tutoriais", "url": "#" }
+      ]
+    }
+  ]
+}
