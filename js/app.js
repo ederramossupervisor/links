@@ -50,7 +50,7 @@ const App = (function () {
     container.innerHTML = links
       .map(function (link) {
         const pendente = !link.url || link.url === '#';
-        const classes = 'link-comum link-item' + (pendente ? ' pendente' : '');
+        const classes = 'link-comum' + (pendente ? ' pendente' : '');
         return (
           '<a href="' + link.url + '" class="' + classes + '" target="_blank" rel="noopener" data-url="' + link.url + '">' +
           '<i class="bi ' + (link.icone || 'bi-link-45deg') + '"></i>' +
